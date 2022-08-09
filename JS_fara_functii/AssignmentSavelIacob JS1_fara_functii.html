@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        </meta>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        </meta>
+        <title>
+            Document
+        </title>
+        <link rel="stylesheet">
+        </link>
+        <style type="text/css">
+            img {
+                display: block;
+                margin-right: auto;
+                margin-left: auto;
+                top: 10em;
+            }
+            a{ 
+                display: block;
+                float: right; 
+                margin-right: 5em;
+                font-size: xx-large;
+                font-weight: bolder;
+            }
+            #mainDiv {
+                display: inline-block;
+                justify-content: center;
+               flex-wrap: wrap;
+                top: 3em;
+               
+                font-weight: bolder;
+                font-size: xx-large;
+            }
+            #div1{
+                display: flex;
+            }
+            #div2{
+               display: flex;
+            }
+            #radiusField {
+                color: blue;
+                padding-left: 1em;
+            }
+            #areaField {
+                color: red;
+                
+                padding-left: 1em;
+            }
+            p{
+                padding-left: 1em;
+            }
+        </style>
+    </head>
+    <body>
+        <img alt="alt text" src="area-of-circle.webp">
+        </img>
+        <div id="mainDiv">
+            <div id="div1">
+                <p id="radius">
+                    For radius =
+                </p>
+                <p id="radiusField">
+                </p>
+            </div>
+            <div id="div2">
+                <p>
+                    the area of the circle is:
+                </p>
+                <p id="areaField">
+                </p>
+            </div>
+        </div>
+        <a href="AssignmentSavelIacob JS1_second.html">
+            Try again
+        </a>
+        <script type="text/javascript">
+            let radiusIn = prompt("Let's calculate the area of a circle.   Insert a not null, positive number for radius of circle:");
+
+            if(typeof radiusIn === 'undefined' || radiusIn === null){
+                alert("Radius must be defined and not null ")
+            }
+            let radius = radiusIn.replaceAll(" ", "");
+
+            document.getElementById("radiusField").innerHTML = radius  
+                if(isNaN (radius) || typeof radius === "undefined" || radius === null){                        
+                    document.getElementById("radiusField").innerHTML = '"' + radius + '"' + " is not a number (NaN)!";
+                    document.getElementById("areaField").innerHTML =  NaN;
+                }else if(radius<0){                               
+                    document.getElementById("radiusField").innerHTML = '"' + radius + '"' + " is negative!";
+                    document.getElementById("areaField").innerHTML =  "There is no circle with negative radius!";
+                }else{
+                    let area = 3.1416 * (radius) * (radius);
+                    document.getElementById("areaField").innerHTML =  area;
+                }
+        </script>
+    </body>
+</html>
